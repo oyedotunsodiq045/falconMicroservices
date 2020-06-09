@@ -4,7 +4,7 @@ const {
   getFile,
   createFile,
   updateFile,
-  deleteFile
+  deleteFile,
 } = require('../controllers/files');
 
 const router = express.Router();
@@ -15,7 +15,7 @@ router
   .post(createFile);
 
 router
-  .route('/:id')
+  .route('/:id/file')
   .get(getFile)
   .put(updateFile)
   .delete(deleteFile);

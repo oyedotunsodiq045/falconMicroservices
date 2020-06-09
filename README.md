@@ -21,7 +21,16 @@ npm start - (production)
 
 * Method - POST
 
-* URL - http://localhost:3000/api/v1/files
+* url - http://localhost:3000/api/v1/files
+
+* Body: form-data
+
+```
+{
+    "Key": "file",
+    "Value": "select files"
+}
+```
 
 * Sample Request
 
@@ -35,7 +44,7 @@ npm start - (production)
 
 ```
 {
-    "success": true,
+    "status": true,
     "message": "File Uploaded"
 }
 ```
@@ -100,9 +109,16 @@ npm start - (production)
 
 * Method - PUT
 
-* URL - http://localhost:3000/api/v1/files/:id
+* URL - http://localhost:3000/api/v1/files/:id/file
 
-* HEADER
+* Body: form-data
+
+```
+{
+    "Key": "file",
+    "Value": "select files"
+}
+```
 
 * Sample Request
 
@@ -127,8 +143,6 @@ npm start - (production)
 * Method - DELETE
 
 * URL - http://localhost:3000/api/v1/files/:id
-
-* HEADER
 
 * Sample Request
 

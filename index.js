@@ -1,8 +1,12 @@
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
+// preferred file upload lib
 // const multer = require('multer');
+// fileupload is an alternative to multer
+// const fileupload = require('express-fileupload');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 // const upload = multer({ dest: 'uploads/' });
@@ -27,6 +31,12 @@ app.use(express.json());
 if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'));
 }
+
+// File Uploading
+// app.use(fileupload());
+
+// Set static folder
+// app.use(express.static(path.join(__dirname, 'public')))
 
 // Mount routers
 app.use('/api/v1/files', files);
