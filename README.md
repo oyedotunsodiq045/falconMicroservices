@@ -1,8 +1,16 @@
 # File Manager(open to edit)
 
-a dockerized micro-service for adding, updating, retrieving and deleting files
+> A dockerized micro-service for adding, updating, retrieving and deleting files
 
 ### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Serve on localhost:3000
+npm start
+```
 
 ### Testing
 
