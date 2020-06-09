@@ -1,13 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const morgan = require('morgan');
 const colors = require('colors');
-const multer = require('multer');
+// const multer = require('multer');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
-const upload = multer({ dest: 'uploads/' })
+// const upload = multer({ dest: 'uploads/' });
 
 // Route files
-const genres = require('./routes/files');
+const files = require('./routes/files');
 
 // Load env vars
 dotenv.config({
@@ -19,8 +20,6 @@ connectDB();
 
 const app = express();
 
-app.use(express.urlencoded({extended:true}));
-
 // Body parser
 app.use(express.json());
 
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV == 'development') {
 }
 
 // Mount routers
-app.use('/api/v1/files/file', files);
+app.use('/api/v1/files', files);
 
 app.use(errorHandler);
 
@@ -50,16 +49,3 @@ process.on('unhandledRejection', (err, promise) => {
   // Close server and exit process
   server.close(() => process.exit(1));
 });
-
-// const get = require();
-// const post = require();
-// const update = require();
-// const remove = require();
-
-// app.use('api/v1/files/file/uploads', get);
-// app.use('api/v1/files/file/upload', post);
-// app.use('api/v1/files/file/:id/update', update);
-// app.use('api/v1/files/file/:id/delete', remove);
-
-// const port = (process.env.PORT || 3000);
-// app.listen(port, ()=> `Server now running on ${port}`)

@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const FileSchema = new Schema({
   name: {
     type: String,
-    trim: true,
     required: [true, 'Please add a file']
   },
   createdAt: {

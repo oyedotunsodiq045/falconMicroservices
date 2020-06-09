@@ -1,11 +1,11 @@
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const File = require('../models/File');
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+// const multer = require('multer');
+// const upload = multer({ dest: 'uploads/' });
 
 // @desc    Get all Files
-// @route   GET /files
+// @route   GET /api/v1/files
 // @access  Public
 exports.getFiles = (req, res, next) => {
   res.status(200).json({
@@ -15,7 +15,7 @@ exports.getFiles = (req, res, next) => {
 };
 
 // @desc    Get single File
-// @route   GET /file/:id
+// @route   GET /api/v1/files/:id
 // @access  Public
 exports.getFile = (req, res, next) => {
   res.status(200).json({
@@ -25,8 +25,8 @@ exports.getFile = (req, res, next) => {
 };
 
 // @desc    Create new File
-// @route   POST /files
-// @access  Public
+// @route   POST /api/v1/files
+// @access  Private
 exports.createFile = (req, res, next) => {
   res.status(201).json({
     success: true,
@@ -35,8 +35,8 @@ exports.createFile = (req, res, next) => {
 };
 
 // @desc    Update File
-// @route   PUT /files/:id
-// @access  Public
+// @route   PUT /api/v1/files/:id
+// @access  Private
 exports.updateFile = (req, res, next) => {
   res.status(200).json({
     success: true,
@@ -45,8 +45,8 @@ exports.updateFile = (req, res, next) => {
 };
 
 // @desc    Delete File
-// @route   DELETE /files/:id
-// @access  Public
+// @route   DELETE /api/v1/files/:id
+// @access  Private
 exports.deleteFile = (req, res, next) => {
   res.status(200).json({
     success: true,
