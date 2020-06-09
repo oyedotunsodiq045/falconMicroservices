@@ -9,8 +9,8 @@ const File = require('../models/File');
 // @access  Public
 exports.getFiles = (req, res, next) => {
   res.status(200).json({
-    success: true,
-    msg: 'Show all files',
+    status: true,
+    message: 'Files Found'
   });
 };
 
@@ -19,8 +19,8 @@ exports.getFiles = (req, res, next) => {
 // @access  Public
 exports.getFile = (req, res, next) => {
   res.status(200).json({
-    success: true,
-    msg: `Show file ${req.params.id}`,
+    status: true,
+    message: `File Found ${req.params.id}`
   });
 };
 
@@ -29,8 +29,8 @@ exports.getFile = (req, res, next) => {
 // @access  Private
 exports.createFile = (req, res, next) => {
   res.status(201).json({
-    success: true,
-    msg: 'Create new file',
+    status: true,
+    message: 'File Uploaded',
   });
 };
 
@@ -39,8 +39,8 @@ exports.createFile = (req, res, next) => {
 // @access  Private
 exports.updateFile = (req, res, next) => {
   res.status(200).json({
-    success: true,
-    msg: `Update file ${req.params.id}`,
+    status: true,
+    message: `File Updated ${req.params.id}`,
   });
 };
 
@@ -49,7 +49,7 @@ exports.updateFile = (req, res, next) => {
 // @access  Private
 exports.deleteFile = (req, res, next) => {
   res.status(200).json({
-    success: true,
-    msg: `Delete file ${req.params.id}`,
+    status: true,
+    message: `File Deleted ${req.params.id}`,
   });
 };

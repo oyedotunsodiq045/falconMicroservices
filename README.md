@@ -9,7 +9,8 @@
 npm install
 
 # Serve on localhost:3000
-npm start
+npm run dev - (development)
+npm start - (production)
 ```
 
 ### Testing
@@ -20,7 +21,7 @@ npm start
 
 * Method - POST
 
-* URL - http://localhost:3000/api/v1/files/file/upload
+* URL - http://localhost:3000/api/v1/files
 
 * Sample Request
 
@@ -34,7 +35,7 @@ npm start
 
 ```
 {
-    "status": true,
+    "success": true,
     "message": "File Uploaded"
 }
 ```
@@ -43,7 +44,7 @@ npm start
 
 * Method - GET
 
-* URL - http://localhost:3000/api/v1/files/file/uploads
+* URL - http://localhost:3000/api/v1/files
 
 * Sample Response
 
@@ -80,7 +81,7 @@ npm start
 
 * Method - GET
 
-* URL - http://localhost:3000/api/v1/files/file/uploads/:id
+* URL - http://localhost:3000/api/v1/files/:id
 
 * Sample Response
 
@@ -99,7 +100,7 @@ npm start
 
 * Method - PUT
 
-* URL - http://localhost:3000/api/v1/files/file/:id/update
+* URL - http://localhost:3000/api/v1/files/:id
 
 * HEADER
 
@@ -125,7 +126,7 @@ npm start
 
 * Method - DELETE
 
-* URL - http://localhost:3000/api/v1/files/file/:id/delete
+* URL - http://localhost:3000/api/v1/files/:id
 
 * HEADER
 
